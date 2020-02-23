@@ -24,9 +24,9 @@ class Bank
   def deposit(value)
     @total += value
   end
-#
-#   def withdrawl
-#
-#   end
-#
+
+  def withdrawl(value)
+    @total -= value 
+  end
+
 end
