@@ -19,12 +19,10 @@ class Bank
 #
   def initialize
     @total = 0
-    @sum = 1000
   end
 
-  def deposit
-    @sum += @total
-
+  def deposit(value)
+    @total += value
   end
 #
 #   def withdrawl

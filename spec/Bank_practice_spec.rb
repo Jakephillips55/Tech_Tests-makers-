@@ -15,10 +15,10 @@ describe Client do
     expect(bank.total).to eq(0)
 
   end
-  
+
   it 'can deposit amount to increase sum' do
     bank = Bank.new
-    expect(bank.deposit).to eq(1000)
+    expect(bank.deposit(1000)).to eq(1000)
 
   end
   # a client makes a doposit of 1000 on 10-01-2012
