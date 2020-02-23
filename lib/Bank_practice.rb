@@ -9,12 +9,8 @@ class Client
 end
 
 class Bank
-  # BALANCE = 0
-# def initialize(dateWrapper)
-#   @dateWrapper = dateWrapper
-# end
 
-  attr_accessor :total, :sum
+  attr_accessor :total
 # => :total, :amount
 #
   def initialize
@@ -26,7 +22,19 @@ class Bank
   end
 
   def withdrawl(value)
-    @total -= value 
+    @total -= value
   end
 
+end
+
+class Date_selecter
+  attr_accessor :date
+
+  def initialize
+    @date = date
+  end
+
+  def history(date)
+    @date = date
+  end
 end

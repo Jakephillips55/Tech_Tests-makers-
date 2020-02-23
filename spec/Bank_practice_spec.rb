@@ -29,6 +29,14 @@ describe Client do
     expect(bank.deposit(2000)).to eq(3000)
     expect(bank.withdrawl(500)).to eq(2500)
   end
+
+  describe Date_selecter do
+    it 'equals preselected date for this test' do
+    date = Date_selecter.new
+    expect(date.history('14/01/2012')).to eq '14/01/2012'
+  end
+end
+
   # a client makes a doposit of 1000 on 10-01-2012
   # it 'a deposit 2000 on 13-01-2012' do
   #  # .expect total.to eq(50)
