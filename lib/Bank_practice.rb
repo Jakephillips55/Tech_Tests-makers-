@@ -4,25 +4,22 @@ class Client
 
   def email
     email = @email
-    
   end
+
 end
 
 class Bank
-
+  # BALANCE = 0
 # def initialize(dateWrapper)
 #   @dateWrapper = dateWrapper
 # end
 
-
-  # attr_accessor :client
-
-
+  attr_accessor :total
 # => :total, :amount
 #
-#   def balance
-#     total = @total
-#   end
+  def initialize
+    @total = 0
+  end
 #
 #   def deposit
 #

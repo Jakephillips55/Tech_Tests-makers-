@@ -2,7 +2,7 @@ require_relative '../lib/Bank_practice.rb'
 
 describe Client do
 
-  it 'can create a client' do
+  it 'create a client which can be named(email)' do
   client = Client.new
   client.email = 'Test'
   expect(client.email).to eq('Test')
@@ -10,14 +10,14 @@ describe Client do
 
   describe Bank do
 
-  it 'a client makes a doposit of 1000 on 10-01-2012' do
-    bank = Bank.new(DateWrapper.new()
-    # bank.deposit(1000)
-
-    # .expect total.to eq(50)
+  it 'can create a new bank balance with bal 0' do
+    bank = Bank.new
+    expect(bank.total).to eq(0)
   end
+  # a client makes a doposit of 1000 on 10-01-2012
   # it 'a deposit 2000 on 13-01-2012' do
-  #
+  #  # .expect total.to eq(50)
+
   # end
   # it 'a withdrawl of 500 14-01-2012' do
   #
@@ -37,8 +37,10 @@ describe Client do
 end
 
 
-class DateWrapper do
-  def initialize(date) do
-    @chosenDate = date
-  end
-end
+# bank = Bank.new(DateWrapper.new()
+#
+# class DateWrapper do
+#   def initialize(date) do
+#     @chosenDate = date
+#   end
+# end
