@@ -11,8 +11,7 @@ end
 class Bank
 
   attr_accessor :total
-# => :total, :amount
-#
+
   def initialize
     @total = 0
   end
@@ -23,6 +22,10 @@ class Bank
 
   def withdrawl(value)
     @total -= value
+  end
+
+  def statement
+    
   end
 
 end
