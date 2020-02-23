@@ -14,16 +14,18 @@ class Bank
 #   @dateWrapper = dateWrapper
 # end
 
-  attr_accessor :total
+  attr_accessor :total, :sum
 # => :total, :amount
 #
   def initialize
     @total = 0
+    @sum = 1000
   end
-#
-#   def deposit
-#
-#   end
+
+  def deposit
+    @sum += @total
+
+  end
 #
 #   def withdrawl
 #

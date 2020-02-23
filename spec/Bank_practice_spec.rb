@@ -13,6 +13,13 @@ describe Client do
   it 'can create a new bank balance with bal 0' do
     bank = Bank.new
     expect(bank.total).to eq(0)
+
+  end
+  
+  it 'can deposit amount to increase sum' do
+    bank = Bank.new
+    expect(bank.deposit).to eq(1000)
+
   end
   # a client makes a doposit of 1000 on 10-01-2012
   # it 'a deposit 2000 on 13-01-2012' do
