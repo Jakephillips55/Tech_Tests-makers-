@@ -3,7 +3,7 @@ class Bank
 
   def initialize
     @total = 0
-    @time = []
+    @time = {}
   end
 
   def deposit(sum)
@@ -15,25 +15,24 @@ class Bank
   end
 
   def input_time
-    @time.push(Time.now.strftime('%d/%-m/%Y').to_sym => @total)
+    @time[Time.now.strftime('%d/%m/%Y')] = @total
   end
 
   def previous_day
-    @time.push(Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y') => @total)
+    @time[Time.at(Time.now.to_i - 86400).strftime('%d/%m/%Y')] = @total
   end
 
   def four_days_ago
-    @time.push(Time.at(Time.now.to_i - 345600).strftime('%d/%-m/%Y') => @total)
+    @time[Time.at(Time.now.to_i - 345600).strftime('%d/%m/%Y')] = @total
   end
 
   def statement
-    @time
-    'date || credit || debit || balance
-       ||   %{24/2/2020} ' % @time
+      puts "date || credit || debit || balance"
+    @time.each { |key, value|
 
+     puts "#{key} || #{value} "}
   end
 end
-
 
 class Client
   attr_accessor :email

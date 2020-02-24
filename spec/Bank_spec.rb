@@ -18,31 +18,37 @@ describe Bank do
     bank.deposit(3000)
     expect(bank.withdrawl(500)).to eq(2500)
   end
-  it 'Displays the current date' do
+  it 'has current date as hash key' do
     bank = Bank.new
-    expect(bank.input_time.pop).to eq Time.now.strftime('%d/%-m/%Y').to_sym => 0
-    p Time.now.strftime('%d/%-m/%Y')
+    bank.deposit(1000)
+    bank.input_time
+    expect(bank.input_time).to eq(
+    '24/04/2020' => 1000)
   end
+
   it 'Can display a transaction date from the previous_day' do
     bank = Bank.new
-    expect(bank.previous_day.pop).to eq Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y') => 0
+    expect(bank.previous_day).to eq Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y') => 0
   end
 
   it 'Can display a transaction from 4 days ago to pass tech test' do
     bank = Bank.new
-    expect(bank.four_days_ago.pop).to eq Time.at(Time.now.to_i - 345600).strftime('%d/%-m/%Y') => 0
+    expect(bank.four_days_ago).to eq Time.at(Time.now.to_i - 345600).strftime('%d/%-m/%Y') => 0
   end
 
   it 'Can print bank statement with organisied output' do
     bank = Bank.new
     bank.deposit(1000)
     bank.input_time
-    bank.statement
+    bank.four_days_ago
+    bank.deposit(2000)
+    bank.previous_day
+    bank.withdrawl(500)
     expect(bank.statement).to eq(
-      'date || credit || debit || balance
-    24/4/2020  ||   1000 ')
+   "date || credit || debit || balance
+     24/02/2020 || 1000")
   end
-end
+
 
 describe Client do
   it 'Creates a client that gets a name on new object' do
@@ -50,4 +56,5 @@ describe Client do
   expect(client.email).to eq 'Test'
   p client.email
  end
+end
 end
