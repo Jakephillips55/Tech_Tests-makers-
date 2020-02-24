@@ -8,6 +8,10 @@ class Bank
   def deposit(sum)
      @total += sum
   end
+
+  def withdrawl(sum)
+    @total -= sum
+  end
 end
 
 class Client
