@@ -1,12 +1,12 @@
 require_relative '../lib/Bank_practice.rb'
 
-describe Client do
-
-  it 'create a client which can be named(email)' do
-  client = Client.new
-  client.email = 'Test'
-  expect(client.email).to eq('Test')
-  end
+# describe Client do
+#
+#   it 'create a client which can be named(email)' do
+#   client = Client.new
+#   # client.email = 'Test'
+#   # expect(client.email).to eq('Test')
+#   end
 
   describe Bank do
 
@@ -57,7 +57,7 @@ end
 # 13/01/2012 || 2000.00 || || 3000.00
 # 10/01/2012 || 1000.00 || || 1000.00
   end
-end
+# end
 
 
 # bank = Bank.new(DateWrapper.new()
