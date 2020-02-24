@@ -23,9 +23,14 @@ describe Bank do
     expect(bank.input_time.pop).to eq Time.now.strftime('%d/%-m/%Y') => 0
     p Time.now.strftime('%d/%-m/%Y')
   end
-  it 'Can display a transaction date from the past' do
+  it 'Can display a transaction date from the previous_day' do
     bank = Bank.new
-    expect(bank.history.pop).to eq Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y') => 0
+    expect(bank.previous_day.pop).to eq Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y') => 0
+  end
+
+  it 'Can display a transaction from 4 days ago to pass tech test' do
+    bank = Bank.new
+    expect(bank.four_days_ago.pop).to eq Time.at(Time.now.to_i - 345600).strftime('%d/%-m/%Y') => 0
   end
 end
 

@@ -18,9 +18,13 @@ class Bank
     @time.push(Time.now.strftime('%d/%-m/%Y') => @total)
   end
 
-  def history
+  def previous_day
     @time.push(Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y') => @total)
-   end
+  end
+
+  def four_days_ago
+    @time.push(Time.at(Time.now.to_i - 345600).strftime('%d/%-m/%Y') => @total)
+  end
 end
 
 
