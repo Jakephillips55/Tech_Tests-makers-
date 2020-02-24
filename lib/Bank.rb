@@ -4,6 +4,10 @@ class Bank
   def initialize
     @total = 0
   end
+
+  def deposit(sum)
+     @total += sum
+  end
 end
 
 class Client
