@@ -15,7 +15,7 @@ class Bank
   end
 
   def input_time
-    @time.push(Time.now.strftime('%d/%-m/%Y') => @total)
+    @time.push(Time.now.strftime('%d/%-m/%Y').to_sym => @total)
   end
 
   def previous_day
@@ -24,6 +24,13 @@ class Bank
 
   def four_days_ago
     @time.push(Time.at(Time.now.to_i - 345600).strftime('%d/%-m/%Y') => @total)
+  end
+
+  def statement
+    @time
+    'date || credit || debit || balance
+       ||   %{24/2/2020} ' % @time
+
   end
 end
 

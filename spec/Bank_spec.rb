@@ -20,7 +20,7 @@ describe Bank do
   end
   it 'Displays the current date' do
     bank = Bank.new
-    expect(bank.input_time.pop).to eq Time.now.strftime('%d/%-m/%Y') => 0
+    expect(bank.input_time.pop).to eq Time.now.strftime('%d/%-m/%Y').to_sym => 0
     p Time.now.strftime('%d/%-m/%Y')
   end
   it 'Can display a transaction date from the previous_day' do
@@ -31,6 +31,16 @@ describe Bank do
   it 'Can display a transaction from 4 days ago to pass tech test' do
     bank = Bank.new
     expect(bank.four_days_ago.pop).to eq Time.at(Time.now.to_i - 345600).strftime('%d/%-m/%Y') => 0
+  end
+
+  it 'Can print bank statement with organisied output' do
+    bank = Bank.new
+    bank.deposit(1000)
+    bank.input_time
+    bank.statement
+    expect(bank.statement).to eq(
+      'date || credit || debit || balance
+    24/4/2020  ||   1000 ')
   end
 end
 
