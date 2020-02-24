@@ -15,11 +15,11 @@ class Bank
   end
 
   def input_time
-    @time << Time.now.strftime('%d/%-m/%Y')
+    @time.push(Time.now.strftime('%d/%-m/%Y') => @total)
   end
 
   def history
-    @time << Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y')
+    @time.push(Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y') => @total)
    end
 end
 
