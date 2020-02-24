@@ -1,3 +1,11 @@
+class Bank
+  attr_accessor :total
+
+  def initialize
+    @total = 0
+  end
+end
+
 class Client
   attr_accessor :email
 
@@ -8,5 +16,4 @@ class Client
   def email
     @email
   end
-
 end
