@@ -18,9 +18,14 @@ describe Bank do
     bank.deposit(3000)
     expect(bank.withdrawl(500)).to eq(2500)
   end
-  it 'Displays the date the transaction occurred' do
+  it 'Displays the current date' do
     bank = Bank.new
-    expect(bank.history).to eq Time.now.strftime('%d/%-m/%Y')
+    expect(bank.input_time).to eq Time.now.strftime('%d/%-m/%Y')
+    p Time.now.strftime('%d/%-m/%Y')
+  end
+  it 'Can display a transaction date from the past' do
+    bank = Bank.new
+    expect(bank.history).to eq Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y')
   end
 end
 

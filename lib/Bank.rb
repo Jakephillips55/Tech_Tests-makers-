@@ -13,10 +13,15 @@ class Bank
     @total -= sum
   end
 
-  def history
+  def input_time
      Time.now.strftime('%d/%-m/%Y')
   end
+
+  def history
+    Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y')
+   end
 end
+
 
 class Client
   attr_accessor :email
