@@ -12,6 +12,10 @@ class Bank
   def withdrawl(sum)
     @total -= sum
   end
+
+  def history
+     Time.now.strftime('%d/%-m/%Y')
+  end
 end
 
 class Client

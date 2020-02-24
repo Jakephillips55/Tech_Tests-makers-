@@ -18,6 +18,10 @@ describe Bank do
     bank.deposit(3000)
     expect(bank.withdrawl(500)).to eq(2500)
   end
+  it 'Displays the date the transaction occurred' do
+    bank = Bank.new
+    expect(bank.history).to eq Time.now.strftime('%d/%-m/%Y')
+  end
 end
 
 describe Client do
