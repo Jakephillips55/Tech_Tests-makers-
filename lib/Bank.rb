@@ -1,8 +1,9 @@
 class Bank
-  attr_accessor :total
+  attr_accessor :total, :time
 
   def initialize
     @total = 0
+    @time = []
   end
 
   def deposit(sum)
@@ -14,11 +15,11 @@ class Bank
   end
 
   def input_time
-     Time.now.strftime('%d/%-m/%Y')
+    @time << Time.now.strftime('%d/%-m/%Y')
   end
 
   def history
-    Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y')
+    @time << Time.at(Time.now.to_i - 86400).strftime('%d/%-m/%Y')
    end
 end
 
