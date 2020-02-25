@@ -7,3 +7,18 @@ class Transaction
     @client = client
   end
 end
+
+class Bank2
+  attr_accessor :balance, :transactions
+  def initialize(client)
+    @client = client
+    @balance = 0
+    @transactions = []
+  end
+
+  def deposit(transaction)
+    transaction.action_type = 'Credit'
+    @transactions.push(transaction)
+    @balance += transaction.amount
+  end 
+end
