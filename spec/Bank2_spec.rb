@@ -16,4 +16,10 @@ describe Bank2 do
     action = Transaction.new(1000, '24/04/2020', 'Jake')
     expect(bills.deposit(action)).to eq 1000
   end
+
+  it 'alllows for a transaction(withdrawl) to occur' do
+    bills = Bank2.new('Jake')
+    action = Transaction.new(1000, '24/04/2020', 'Jake')
+    expect(bills.withdrawl(action)).to eq -1000
+  end
 end

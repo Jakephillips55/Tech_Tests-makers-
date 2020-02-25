@@ -20,5 +20,11 @@ class Bank2
     transaction.action_type = 'Credit'
     @transactions.push(transaction)
     @balance += transaction.amount
-  end 
+  end
+
+  def withdrawl(transaction)
+    transaction.action_type = 'Debit'
+    @transactions.push transaction
+    @balance -= transaction.amount
+  end
 end
