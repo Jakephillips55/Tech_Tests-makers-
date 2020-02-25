@@ -27,4 +27,17 @@ class Bank2
     @transactions.push transaction
     @balance -= transaction.amount
   end
+
+  def statement
+    puts "Statement for #{@client} "
+    format = '%-10s %-8s %-8s %-10s'
+    puts format % ['Date', 'Credit', 'Debit', 'Balance']
+    transactions.each do |action|
+      if action.action_type = 'Debit'
+        puts format % [ action.action_date, 0, action.amount, @balance ]
+      else
+        puts format % [ action.action_date, action.amount, 0, @balance]
+      end
+    end
+ end
 end

@@ -22,4 +22,14 @@ describe Bank2 do
     action = Transaction.new(1000, '24/04/2020', 'Jake')
     expect(bills.withdrawl(action)).to eq -1000
   end
+
+  it 'Can create a bank statement with organisied output' do
+    bills = Bank2.new('Jake')
+    action = Transaction.new(1000, '24/04/2020', 'Jake')
+    money = Transaction.new(3000, '24/04/2020', 'Jake')
+    bills.deposit(action)
+    bills.withdrawl(money)
+    expect(bills.statement).to eq (bills.statement)
+    p bills.statement
+  end
 end
