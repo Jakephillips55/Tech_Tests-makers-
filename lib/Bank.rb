@@ -27,10 +27,9 @@ class Bank
   end
 
   def statement
-      puts "date || credit || debit || balance"
-    @time.each { |key, value|
-
-     puts "#{key} || #{value} "}
+    puts "date || credit || debit || balance"
+     @time.each { |key, value|
+    puts "#{key} || #{value}"}
   end
 end
 
