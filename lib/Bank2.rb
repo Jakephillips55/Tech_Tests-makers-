@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class Transaction
-  attr_accessor :client, :amount, :action_date, :action_type
+  attr_accessor :client, :amount, :transaction_date, :transaction_type
 
-  def initialize(amount, action_date, client)
+  def initialize(amount, transaction_date, client)
     @amount = amount
-    @action_date = action_date
+    @transaction_date = transaction_date
     @client = client
   end
 end
@@ -19,13 +19,13 @@ class Bank2
   end
 
   def deposit(transaction)
-    transaction.action_type = 'Credit'
+    transaction.transaction_type = 'Credit'
     @transactions.push(transaction)
     @balance += transaction.amount
   end
 
   def withdrawl(transaction)
-    transaction.action_type = 'Debit'
+    transaction.transaction_type = 'Debit'
     @transactions.push transaction
     @balance -= transaction.amount
   end
@@ -35,10 +35,10 @@ class Bank2
     format = '%-10s %-8s %-8s %-10s'
     transactions.each do |action|
       puts format(format, 'Date', 'Credit', 'Debit', 'Balance')
-      if action.action_type = 'Debit'
-        puts format(format, action.action_date, 0, action.amount, @balance)
+      if action.transaction_type = 'Debit'
+        puts format(format, action.transaction_date, 0, action.amount, @balance)
       else
-        puts format(format, action.action_date, action.amount, 0, @balance)
+        puts format(format, action.transaction_date, action.amount, 0, @balance)
       end
     end
  end
