@@ -27,9 +27,8 @@ describe Bank2 do
     bills = Bank2.new('Jake')
     action = Transaction.new(1000, '24/04/2020', 'Jake')
     money = Transaction.new(3000, '24/04/2020', 'Jake')
-    bills.deposit(action)
-    bills.withdrawl(money)
-    expect(bills.statement).to eq (bills.statement)
-    p bills.statement
+    bills.deposit(money)
+    bills.withdrawl(action)
+    expect(bills.statement).to be_an(Array)
   end
 end

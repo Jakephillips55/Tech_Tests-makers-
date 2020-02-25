@@ -36,20 +36,17 @@ describe Bank do
   #  Time.at(Time.now.to_i - 345600).strftime('%d/%m/%Y')
   end
 
-  # it 'Can print bank statement with organisied output' do
-  #   bank = Bank.new
-  #   bank.deposit(1000)
-  #   bank.four_days_ago
-  #   bank.deposit(2000)
-  #   bank.previous_day
-  #   bank.withdrawl(500)
-  #   bank.input_time
-  #   expect(bank.statement).to eq(
-  #   "date || credit || debit || balance
-  #    '21/02/2020' => 1000,
-  #    '24/02/2020' => 3000,
-  #    '25/02/2020' => 3000,")
-  # end
+  it 'Can print bank statement with organisied output' do
+    bank = Bank.new
+    bank.deposit(1000)
+    bank.four_days_ago
+    bank.deposit(2000)
+    bank.previous_day
+    bank.withdrawl(500)
+    bank.input_time
+    expect(bank.statement).to be_an(Hash)
+
+  end
 
 
 describe Client do
