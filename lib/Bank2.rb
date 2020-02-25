@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Transaction
   attr_accessor :client, :amount, :action_date, :action_type
 
@@ -32,11 +34,11 @@ class Bank2
     puts "Statement for #{@client} "
     format = '%-10s %-8s %-8s %-10s'
     transactions.each do |action|
-      puts format % ['Date', 'Credit', 'Debit', 'Balance']
+      puts format(format, 'Date', 'Credit', 'Debit', 'Balance')
       if action.action_type = 'Debit'
-        puts format % [ action.action_date, 0, action.amount, @balance ]
+        puts format(format, action.action_date, 0, action.amount, @balance)
       else
-        puts format % [ action.action_date, action.amount, 0, @balance ]
+        puts format(format, action.action_date, action.amount, 0, @balance)
       end
     end
  end

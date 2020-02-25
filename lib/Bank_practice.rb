@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # # practice for the tech test on monday
 # class Client
 #   attr_accessor :client, :email

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # require_relative '../lib/Bank_practice.rb'
 #
 # # describe Client do
